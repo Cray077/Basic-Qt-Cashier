@@ -15,8 +15,20 @@ qt_add_executable(appBasic_Qt_Cashier
 qt_add_qml_module(appBasic_Qt_Cashier
     URI Basic_Qt_Cashier
     QML_FILES
-        Main.qml
+
         RESOURCES references
+        QML_FILES
+        QML_FILES
+        QML_FILES Main.qml
+        QML_FILES ui/Cashier.qml
+        QML_FILES ui/About.qml ui/MainMenu.qml
+        RESOURCES "random stuff/todo.txt"
+        RESOURCES ui/assets/shopping-cart.png
+        RESOURCES ui/assets/about.png ui/assets/manage.png ui/assets/options.png
+        QML_FILES ui/Manage.qml
+        QML_FILES ui/managementUi/itemManagement.qml
+        RESOURCES ui/assets/item.png
+        RESOURCES ui/assets/back.png
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

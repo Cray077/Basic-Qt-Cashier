@@ -1,0 +1,12 @@
+make a main menu
+
+make a menu with 4 options
+
+- Cashier
+- Management
+- Options
+- About
+
+
+
+make a about menu
