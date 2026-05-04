@@ -29,6 +29,8 @@ qt_add_qml_module(appBasic_Qt_Cashier
         QML_FILES ui/managementUi/itemManagement.qml
         RESOURCES ui/assets/item.png
         RESOURCES ui/assets/back.png
+        RESOURCES ui/assets/customer.png ui/assets/database-storage.png ui/assets/transaction.png
+        QML_FILES ui/managementUi/customerManagement.qml ui/managementUi/databaseManagement.qml ui/managementUi/transactionManagement.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

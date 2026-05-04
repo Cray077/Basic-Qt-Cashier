@@ -6,6 +6,10 @@ ColumnLayout {
     id: mainColumn
 
     signal backToMainMenu()
+    signal openItemManagement()
+    signal openCustomerManagement()
+    signal openDatabaseManagement()
+    signal openTransactionManagement()
 
     anchors.fill: parent
     anchors.centerIn: parent
@@ -23,89 +27,120 @@ ColumnLayout {
     }
 
     RowLayout {
-
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignHCenter
         spacing: 100
 
         Button {
-            id: itemButton
+            id: itemManagementButton
             Layout.preferredWidth: 120
             Layout.preferredHeight: 120
 
             background: Rectangle {
                 anchors.centerIn: parent
                 radius: 10
-                color: itemButton.pressed ? "#093C5D" : "#3B7597"
+                color: itemManagementButton.pressed ? "#093C5D" : "#3B7597"
                 width: 60
                 height: 60
-                }
+            }
 
             contentItem: Item {
                 anchors.fill: parent
 
                 Image {
                     anchors.centerIn: parent
-                    source: "assets/item.png"   // your icon
+                    source: "assets/item.png"
                     width: 48
                     height: 48
                     fillMode: Image.PreserveAspectFit
                 }
             }
-            // onClicked: mainColumn.openCashier()
-        }
 
-
-        Button {
-            id: manageButton
-            Layout.preferredWidth: 120
-            Layout.preferredHeight: 120
-
-            background: Rectangle {
-                anchors.centerIn: parent
-                radius: 10
-                color: manageButton.pressed ? "#093C5D" : "#3B7597"
-                width: 60
-                height: 60
-                }
-
-            contentItem: Item {
-                anchors.fill: parent
-
-                Image {
-                    anchors.centerIn: parent
-                    source: "assets/manage.png"   // your icon
-                    width: 48
-                    height: 48
-                    fillMode: Image.PreserveAspectFit
-                }
-            }
+            onClicked: mainColumn.openItemManagement()
         }
 
         Button {
-            id: optionsButton
+            id: customerManagementButton
             Layout.preferredWidth: 120
             Layout.preferredHeight: 120
 
             background: Rectangle {
                 anchors.centerIn: parent
                 radius: 10
-                color: optionsButton.pressed ? "#093C5D" : "#3B7597"
+                color: customerManagementButton.pressed ? "#093C5D" : "#3B7597"
                 width: 60
                 height: 60
-                }
+            }
 
             contentItem: Item {
                 anchors.fill: parent
 
                 Image {
                     anchors.centerIn: parent
-                    source: "assets/options.png"   // your icon
+                    source: "assets/customer.png"
                     width: 48
                     height: 48
                     fillMode: Image.PreserveAspectFit
                 }
             }
+
+            onClicked: mainColumn.openCustomerManagement()
+        }
+
+        Button {
+            id: databaseManagementButton
+            Layout.preferredWidth: 120
+            Layout.preferredHeight: 120
+
+            background: Rectangle {
+                anchors.centerIn: parent
+                radius: 10
+                color: databaseManagementButton.pressed ? "#093C5D" : "#3B7597"
+                width: 60
+                height: 60
+            }
+
+            contentItem: Item {
+                anchors.fill: parent
+
+                Image {
+                    anchors.centerIn: parent
+                    source: "assets/database-storage.png"
+                    width: 48
+                    height: 48
+                    fillMode: Image.PreserveAspectFit
+                }
+            }
+
+            onClicked: mainColumn.openDatabaseManagement()
+        }
+
+        Button {
+            id: transactionManagementButton
+            Layout.preferredWidth: 120
+            Layout.preferredHeight: 120
+
+            background: Rectangle {
+                anchors.centerIn: parent
+                radius: 10
+                color: transactionManagementButton.pressed ? "#093C5D" : "#3B7597"
+                width: 60
+                height: 60
+            }
+
+            contentItem: Item {
+                anchors.fill: parent
+
+                Image {
+                    anchors.centerIn: parent
+                    source: "assets/transaction.png"
+                    width: 48
+                    height: 48
+                    fillMode: Image.PreserveAspectFit
+                }
+            }
+
+            onClicked: mainColumn.openTransactionManagement()
         }
 
         Button {
@@ -119,21 +154,20 @@ ColumnLayout {
                 color: backButton.pressed ? "#093C5D" : "#3B7597"
                 width: 60
                 height: 60
-                }
-
-
+            }
 
             contentItem: Item {
                 anchors.fill: parent
 
                 Image {
                     anchors.centerIn: parent
-                    source: "assets/back.png"   // your icon
+                    source: "assets/back.png"
                     width: 48
                     height: 48
                     fillMode: Image.PreserveAspectFit
                 }
             }
+
             onClicked: mainColumn.backToMainMenu()
         }
     }
