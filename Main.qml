@@ -9,6 +9,7 @@ ApplicationWindow {
     visible: true
     title: qsTr("Basic Cashier")
 
+
     Loader {
         id: pageLoader
         anchors.fill: parent

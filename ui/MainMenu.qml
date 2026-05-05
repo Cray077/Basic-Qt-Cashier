@@ -139,5 +139,6 @@ ColumnLayout {
             }
             onClicked: mainColumn.openAbout()
         }
+
     }
 }

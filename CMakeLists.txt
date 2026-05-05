@@ -4,7 +4,8 @@ project(Basic_Qt_Cashier VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Quick Sql QuickControls2)
+
 
 qt_standard_project_setup(REQUIRES 6.10)
 
@@ -22,7 +23,6 @@ qt_add_qml_module(appBasic_Qt_Cashier
         QML_FILES Main.qml
         QML_FILES ui/Cashier.qml
         QML_FILES ui/About.qml ui/MainMenu.qml
-        RESOURCES "random stuff/todo.txt"
         RESOURCES ui/assets/shopping-cart.png
         RESOURCES ui/assets/about.png ui/assets/manage.png ui/assets/options.png
         QML_FILES ui/Manage.qml
@@ -31,6 +31,14 @@ qt_add_qml_module(appBasic_Qt_Cashier
         RESOURCES ui/assets/back.png
         RESOURCES ui/assets/customer.png ui/assets/database-storage.png ui/assets/transaction.png
         QML_FILES ui/managementUi/customerManagement.qml ui/managementUi/databaseManagement.qml ui/managementUi/transactionManagement.qml
+        SOURCES Controllers/databasemanager.h Controllers/databasemanager.cpp
+        SOURCES Controllers/databasemanager.cpp
+        SOURCES Controllers/databasemanager.cpp Controllers/databasemanager.h
+        SOURCES Controllers/databasemanager.cpp
+        SOURCES
+        SOURCES Controllers/databasemanager.cpp Controllers/databasemanager.h
+        QML_FILES ui/SearchPopup.qml
+        QML_FILES ui/managementUi/SearchPopup.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -45,8 +53,12 @@ set_target_properties(appBasic_Qt_Cashier PROPERTIES
 )
 
 target_link_libraries(appBasic_Qt_Cashier
-    PRIVATE Qt6::Quick
+    PRIVATE
+    Qt6::Quick
+    Qt6::QuickControls2
+    Qt6::Sql
 )
+
 
 install(TARGETS appBasic_Qt_Cashier
     BUNDLE DESTINATION .
